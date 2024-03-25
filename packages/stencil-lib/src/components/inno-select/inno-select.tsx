@@ -19,6 +19,7 @@ export class InnoSelect {
   @Prop() label: string;
   @Prop() variant: 'light' | 'dark' = 'light';
   @State() isOpen: boolean = false;
+  @Prop() iconDriven: boolean = false;
   @Event() valueChanged: EventEmitter<string>;
 
   selectClicked() {
@@ -122,9 +123,8 @@ export class InnoSelect {
     return [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
   }
 
-  get selectedLabel() {
-    let selected = this.items.find(i => i.value == this.value);
-    return selected.label;
+  get selectedItem() {
+    return this.items.find(i => i.value == this.value);
   }
 
   render() {
@@ -142,14 +142,24 @@ export class InnoSelect {
         onFocusout={() => this.onFocusout()}
         onClick={() => this.selectClicked()}
       >
-        <div class="select-header">
-          <div class={{ content: true, filled: this.value != undefined }}>
-            <span class={{ label: true, float: this.value != undefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
-              {this.label}
-            </span>
-            <span>{this.selectedLabel}</span>
-          </div>
-          <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>
+        <div>
+          {!this.iconDriven ? (
+            <div class="select-header">
+              <div class={{ content: true, filled: this.value != undefined }}>
+                <span class={{ label: true, float: this.value != undefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
+                  {this.label}
+                </span>
+                <span>{this.selectedItem.label}</span>
+              </div>
+              <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
+            </div>
+          ) : (
+            <div class="select-item icon-driven">
+              {this.selectedItem.icon ? <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon> : null}
+              <div class="content-wrapper">{this.selectedItem.label}</div>
+              <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
+            </div>
+          )}
         </div>
         <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isOpen }}>
           <slot></slot>

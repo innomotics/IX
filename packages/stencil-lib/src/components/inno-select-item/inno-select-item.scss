@@ -1,16 +1,8 @@
 @use '@innomotics/ix/styles/colors';
 
 :host {
-  display: flex;
-  align-items:center;
-  border-width: 0px;
-  border-style: none;
-  padding: 0px 16px 0px 16px;
-  height: 56px;
   background-color: colors.$additional-light-400;
   color:colors.$text-light-buttonlabel;
-  justify-content: space-between;
-  cursor:pointer;
   &:hover{
     background-color: colors.$text-dark-lowemphasis;
     color:colors.$text-light-highemphasis;

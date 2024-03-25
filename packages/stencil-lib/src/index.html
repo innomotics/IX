@@ -10,158 +10,195 @@
     <link href="/build/innomotics-ix.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 15px">
-      <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
-        <inno-toggle></inno-toggle>
-        <inno-toggle disabled></inno-toggle>
+<body>
+  <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 15px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
+      <inno-toggle></inno-toggle>
+      <inno-toggle disabled></inno-toggle>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; background-color: #08191f; padding: 10px;">
+      <inno-toggle variant="light"></inno-toggle>
+      <inno-toggle variant="light" disabled></inno-toggle>
+    </div>
+  </div>
+  <span id="onclickspan" style="background-color: black; color: white">tooltip on click</span>
+  <span id="onhoverspan" style="background-color: black; color: white">tooltip on hover</span>
+  <span id="manualspan" style="background-color: black; color: white">manual tooltip, click on the button --&gt;</span>
+  <button id="manualbtn">click me!</button>
+  <inno-popover for="#onclickspan" placement="right" title-content="title">
+    <p>
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+      quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+      sit amet est et sapien ullamcorper pharetra. Vestibulum
+      erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+      dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+      erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </inno-popover>
+  <inno-popover for="#onhoverspan" placement="bottom" trigger="hover" title-content="title" variant="light">
+    <p>
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+      quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+      sit amet est et sapien ullamcorper pharetra. Vestibulum
+      erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+      dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+      erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </inno-popover>
+  <inno-popover id="manualpop" for="#manualspan" placement="bottom" trigger="manual" title-content="title">
+    <p>
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+      quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+      sit amet est et sapien ullamcorper pharetra. Vestibulum
+      erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+      dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+      erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </inno-popover>
+  <br />
+  <inno-accordion variant="light" label="Example">first accordion</inno-accordion>
+  <inno-accordion variant="light" label="Example2" collapsed>
+    second accordion
+    <inno-accordion variant="light" label="Inner Label" collapsed inner>inner inner inner</inno-accordion>
+  </inno-accordion>
+  <inno-accordion variant="light" label="Example3" collapsed last>third accordion</inno-accordion>
+  <br /> <br />
+  <inno-accordion variant="dark" label="Example">first accordion</inno-accordion>
+  <inno-accordion variant="dark" label="Example2" collapsed>
+    second accordion
+  </inno-accordion>
+  <inno-accordion variant="dark" label="Example3" collapsed last>third accordion</inno-accordion>
+  <br />
+  <inno-button id="button-showcase-toggle" variant="primary" color-variant="dark">right pane (with
+    buttons)</inno-button>
+  <inno-button id="left-toggle" variant="primary" color-variant="dark">left pane</inno-button>
+  <inno-button id="top-toggle" variant="primary" color-variant="dark">top pane</inno-button>
+  <inno-button id="bottom-toggle" variant="primary" color-variant="dark">bottom pane</inno-button>
+  <inno-pane id="button-showcase" title-text="Button showcase" close-on-backdrop-click="false" pane-size="1100px">
+    <div>
+      <h1>regular buttons</h1>
+      <div style="display: flex; flex-direction: row">
+        <div style="background-color: white; padding: 15px">
+          <span style="display: block; margin-bottom: 25px; color: black">light background</span>
+          <inno-button variant="primary" icon="arrow-right" color-variant="dark">primary button</inno-button>
+          <inno-button variant="secondary" icon="arrow-right" color-variant="dark">secondary button</inno-button>
+          <inno-button variant="tertiary" icon="arrow-right" color-variant="dark">tertiary button</inno-button>
+          <inno-button variant="primary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+          <inno-button variant="secondary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+          <inno-button variant="tertiary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+        </div>
+        <div style="background-color: #08191f; padding: 15px">
+          <span style="display: block; margin-bottom: 25px; color: white">dark background</span>
+          <inno-button variant="primary" icon="arrow-right">primary button</inno-button>
+          <inno-button variant="secondary" icon="arrow-right">secondary button</inno-button>
+          <inno-button variant="tertiary" icon="arrow-right">tertiary button</inno-button>
+          <inno-button variant="primary" icon="arrow-right" icon-only="true"></inno-button>
+          <inno-button variant="secondary" icon="arrow-right" icon-only="true"></inno-button>
+          <inno-button variant="tertiary" icon="arrow-right" icon-only="true"></inno-button>
+        </div>
+        <div style="background-color: white; padding: 15px">
+          <span style="display: block; margin-bottom: 25px; color: black">disabled light background</span>
+          <inno-button variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary
+            button</inno-button>
+          <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary
+            button</inno-button>
+          <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary
+            button</inno-button>
+          <inno-button variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+          <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+          <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+        </div>
+        <div style="background-color: #08191f; padding: 15px">
+          <span style="display: block; margin-bottom: 25px; color: white">disabled dark background</span>
+          <inno-button variant="primary" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
+          <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
+          <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
+          <inno-button variant="primary" disabled icon="cogwheel" icon-only="true"></inno-button>
+          <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true"></inno-button>
+          <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true"></inno-button>
+        </div>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 10px; background-color: #08191f; padding: 10px">
-        <inno-toggle variant="light"></inno-toggle>
-        <inno-toggle variant="light" disabled></inno-toggle>
+      <h1>media buttons</h1>
+      <div style="display: flex; flex-direction: row; gap: 40px">
+        <inno-button variant="media" icon="search"></inno-button>
+        <inno-button variant="media" icon="search" disabled></inno-button>
+      </div>
+      <h1>navigation buttons</h1>
+      <div style="display: flex; flex-direction: row; gap: 40px">
+        <inno-button variant="navigation" nav-direction="left"></inno-button>
+        <inno-button variant="navigation" disabled></inno-button>
       </div>
     </div>
-    <span id="onclickspan" style="background-color: black; color: white">tooltip on click</span>
-    <span id="onhoverspan" style="background-color: black; color: white">tooltip on hover</span>
-    <span id="manualspan" style="background-color: black; color: white">manual tooltip, click on the button --&gt;</span>
-    <button id="manualbtn">click me!</button>
-    <inno-popover for="#onclickspan" placement="right" title-content="title">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-popover>
-    <inno-popover for="#onhoverspan" placement="bottom" trigger="hover" title-content="title" variant="light">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-popover>
-    <inno-popover id="manualpop" for="#manualspan" placement="bottom" trigger="manual" title-content="title">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-popover>
-    <br />
-    <inno-accordion variant="light" label="Example">first accordion</inno-accordion>
-    <inno-accordion variant="light" label="Example2" collapsed>
-      second accordion
-      <inno-accordion variant="light" label="Inner Label" collapsed inner>inner inner inner</inno-accordion>
-    </inno-accordion>
-    <inno-accordion variant="light" label="Example3" collapsed last>third accordion</inno-accordion>
-    <br />
-    <br />
-    <inno-accordion variant="dark" label="Example">first accordion</inno-accordion>
-    <inno-accordion variant="dark" label="Example2" collapsed> second accordion </inno-accordion>
-    <inno-accordion variant="dark" label="Example3" collapsed last>third accordion</inno-accordion>
-    <br />
-    <inno-button id="button-showcase-toggle" variant="primary" color-variant="dark">right pane (with buttons)</inno-button>
-    <inno-button id="left-toggle" variant="primary" color-variant="dark">left pane</inno-button>
-    <inno-button id="top-toggle" variant="primary" color-variant="dark">top pane</inno-button>
-    <inno-button id="bottom-toggle" variant="primary" color-variant="dark">bottom pane</inno-button>
-    <inno-pane id="button-showcase" title-text="Button showcase" close-on-backdrop-click="false" pane-size="1100px">
-      <div>
-        <h1>regular buttons</h1>
-        <div style="display: flex; flex-direction: row">
-          <div style="background-color: white; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: black">light background</span>
-            <inno-button variant="primary" icon="arrow-right" color-variant="dark">primary button</inno-button>
-            <inno-button variant="secondary" icon="arrow-right" color-variant="dark">secondary button</inno-button>
-            <inno-button variant="tertiary" icon="arrow-right" color-variant="dark">tertiary button</inno-button>
-            <inno-button variant="primary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="secondary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="tertiary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
-          </div>
-          <div style="background-color: #08191f; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: white">dark background</span>
-            <inno-button variant="primary" icon="arrow-right">primary button</inno-button>
-            <inno-button variant="secondary" icon="arrow-right">secondary button</inno-button>
-            <inno-button variant="tertiary" icon="arrow-right">tertiary button</inno-button>
-            <inno-button variant="primary" icon="arrow-right" icon-only="true"></inno-button>
-            <inno-button variant="secondary" icon="arrow-right" icon-only="true"></inno-button>
-            <inno-button variant="tertiary" icon="arrow-right" icon-only="true"></inno-button>
-          </div>
-          <div style="background-color: white; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: black">disabled light background</span>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-          </div>
-          <div style="background-color: #08191f; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: white">disabled dark background</span>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true"></inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true"></inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true"></inno-button>
-          </div>
-        </div>
-        <h1>media buttons</h1>
-        <div style="display: flex; flex-direction: row; gap: 40px">
-          <inno-button variant="media" icon="search"></inno-button>
-          <inno-button variant="media" icon="search" disabled></inno-button>
-        </div>
-        <h1>navigation buttons</h1>
-        <div style="display: flex; flex-direction: row; gap: 40px">
-          <inno-button variant="navigation" nav-direction="left"></inno-button>
-          <inno-button variant="navigation" disabled></inno-button>
-        </div>
-      </div>
-    </inno-pane>
-    <inno-pane id="left-pane" title-text="Left pane" close-on-backdrop-click="true" pane-size="500px" position="left">
-      <p style="color: white">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-pane>
-    <inno-pane id="top-pane" title-text="Top pane" close-on-backdrop-click="true" pane-size="500px" position="top">
-      <p style="color: white">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-pane>
-    <inno-pane id="bottom-pane" title-text="Bottom pane" close-on-backdrop-click="true" pane-size="500px" position="bottom">
-      <p style="color: white">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-pane>
-    <h1>breadcrumb</h1>
-    <inno-breadcrumb>
-      <inno-breadcrumb-item label="One">yeee</inno-breadcrumb-item>
-      <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
-    </inno-breadcrumb>
-    <inno-input label="Power" variant="light">
-      <input type="number" />
-      <inno-error type="badInput">Not valid</inno-error>
-    </inno-input>
-    <inno-select label="Select" value="124">
-      <inno-select-item value="124" label="<sub>324</sub>4321"></inno-select-item>
-      <inno-select-item value="124321" label="431"></inno-select-item>
-    </inno-select>
+  </inno-pane>
+  <inno-pane id="left-pane" title-text="Left pane" close-on-backdrop-click="true" pane-size="500px" position="left">
+    <p style="color: white">
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+      quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+      sit amet est et sapien ullamcorper pharetra. Vestibulum
+      erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+      dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+      erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </inno-pane>
+  <inno-pane id="top-pane" title-text="Top pane" close-on-backdrop-click="true" pane-size="500px" position="top">
+    <p style="color: white">
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+      quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+      sit amet est et sapien ullamcorper pharetra. Vestibulum
+      erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+      dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+      erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </inno-pane>
+  <inno-pane id="bottom-pane" title-text="Bottom pane" close-on-backdrop-click="true" pane-size="500px"
+    position="bottom">
+    <p style="color: white">
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+      quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+      sit amet est et sapien ullamcorper pharetra. Vestibulum
+      erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+      dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+      erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </inno-pane>
+  <h1>breadcrumb</h1>
+  <inno-breadcrumb>
+    <inno-breadcrumb-item label="One">yeee</inno-breadcrumb-item>
+    <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+  </inno-breadcrumb>
+  <inno-input label="Power" variant="light">
+    <input type="number" />
+    <inno-error type="badInput">Not valid</inno-error>
+  </inno-input>
+  <inno-select label="Select" value="124" icon-driven="true">
+    <inno-select-item value="124" icon="star" label="324"></inno-select-item>
+    <inno-select-item value="124321" icon="arrow-left" label="431"></inno-select-item>
+    <inno-select-item value="12" icon="about" label="431"></inno-select-item>
+  </inno-select>
+
+  <inno-select label="Select" value="124">
+    <inno-select-item value="124" label="324"></inno-select-item>
+    <inno-select-item value="124321" label="431"></inno-select-item>
+    <inno-select-item value="12" label="431"></inno-select-item>
+  </inno-select>
 
     <div style="background-color: #08191f; padding: 15px">
       <inno-button variant="primary" icon="arrow-right" list-type>primary button</inno-button>

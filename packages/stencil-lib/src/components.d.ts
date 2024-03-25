@@ -106,6 +106,7 @@ export namespace Components {
     }
     interface InnoSelect {
         "disabled": boolean;
+        "iconDriven": boolean;
         "isFocused": boolean;
         "label": string;
         "name": string;
@@ -114,6 +115,7 @@ export namespace Components {
         "variant": 'light' | 'dark';
     }
     interface InnoSelectItem {
+        "icon": string;
         "label": string;
         "selected": boolean;
         "value": string;
@@ -459,6 +461,7 @@ declare namespace LocalJSX {
     }
     interface InnoSelect {
         "disabled"?: boolean;
+        "iconDriven"?: boolean;
         "isFocused"?: boolean;
         "label"?: string;
         "name"?: string;
@@ -468,6 +471,7 @@ declare namespace LocalJSX {
         "variant"?: 'light' | 'dark';
     }
     interface InnoSelectItem {
+        "icon"?: string;
         "label"?: string;
         "onItemSelected"?: (event: InnoSelectItemCustomEvent<string>) => void;
         "selected"?: boolean;

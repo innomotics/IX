@@ -9,6 +9,7 @@ import { Element, Event, EventEmitter, Component, Host, Prop, h } from '@stencil
 export class InnoSelectItem {
   @Prop() value: string;
   @Prop() label : string
+  @Prop() icon: string;
   @Prop() selected: boolean = false;
   @Event() itemSelected: EventEmitter<string>;
   @Element() host: HTMLInnoSelectElement;
@@ -19,9 +20,10 @@ export class InnoSelectItem {
 
   render() {
     return (
-      <Host class={{ selected: this.selected }} onClick={() => this.selectItem()}>
+      <Host class={{ 'select-item': true, 'icon-driven': this.icon != undefined, selected: this.selected }} onClick={() => this.selectItem()}>
+        {this.icon? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
         <div class="content-wrapper">{this.label}</div>
-        {this.selected ? <inno-icon icon="check" size={16}></inno-icon> : null}
+        {this.selected && !this.icon ? <inno-icon icon="check" size={16}></inno-icon> : null}
       </Host>
     );
   }
