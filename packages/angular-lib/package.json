@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-angular-lib",
-  "version": "0.0.1-alpha.9",
+  "version": "0.0.1-alpha.10",
   "description": "> TODO: description",
   "author": "",
   "types": "dist/types/index.d.ts",
@@ -30,7 +30,7 @@
     }
   },
   "dependencies": {
-    "@innomotics/ix": "^0.0.1-alpha.9"
+    "@innomotics/ix": "^0.0.1-alpha.10"
   },
   "devDependencies": {
     "ng-packagr": "^17.2.0"

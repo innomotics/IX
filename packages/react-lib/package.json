@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-react-lib",
-  "version": "0.0.1-alpha.9",
+  "version": "0.0.1-alpha.10",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -26,7 +26,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@innomotics/ix": "^0.0.1-alpha.9"
+    "@innomotics/ix": "^0.0.1-alpha.10"
   },
   "peerDependencies": {
     "@innomotics/ix": "^0.0.1-alpha.9",
