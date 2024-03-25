@@ -28,7 +28,7 @@ export class InnoSelect {
 
   componentDidLoad() {
     if (this.value) {
-      this.selectitem(this.value);
+      this.selectitem(this.value, true);
     }
   }
 
@@ -58,9 +58,11 @@ export class InnoSelect {
     this.selectitem(event.detail);
   }
 
-  selectitem(value: string) {
+  selectitem(value: string, init: boolean = false) {
     this.value = value;
-    this.valueChanged.emit(this.value);
+    if (!init) {
+      this.valueChanged.emit(this.value);
+    }
     this.items.forEach(i => {
       if (i.value === this.value) {
         i.selected = true;
