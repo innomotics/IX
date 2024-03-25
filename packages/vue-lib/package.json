@@ -31,8 +31,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "@innomotics/ix": "^0.0.1-alpha.9",
-    "@innomotics/ix-fonts": "^0.0.1-alpha.9",
-    "@innomotics/ix-icons": "^0.0.1-alpha.9"
+    "@innomotics/ix": "^0.0.1-alpha.10",
+    "@innomotics/ix-fonts": "^0.0.1-alpha.10",
+    "@innomotics/ix-icons": "^0.0.1-alpha.10"
   }
 }
