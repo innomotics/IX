@@ -250,14 +250,14 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;
@@ -276,14 +276,14 @@ export declare interface InnoSelect extends Components.InnoSelect {
 
 
 @ProxyCmp({
-  inputs: ['label', 'selected', 'value']
+  inputs: ['icon', 'label', 'selected', 'value']
 })
 @Component({
   selector: 'inno-select-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'selected', 'value'],
+  inputs: ['icon', 'label', 'selected', 'value'],
 })
 export class InnoSelectItem {
   protected el: HTMLElement;

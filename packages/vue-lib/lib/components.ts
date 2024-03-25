@@ -110,6 +110,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'disabled',
   'label',
   'variant',
+  'iconDriven',
   'valueChanged'
 ]);
 
@@ -117,6 +118,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
 export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>('inno-select-item', undefined, [
   'value',
   'label',
+  'icon',
   'selected',
   'itemSelected'
 ]);
